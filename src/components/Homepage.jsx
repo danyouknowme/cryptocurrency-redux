@@ -3,13 +3,13 @@ import millify from 'millify';
 import { Typography, Row, Col, Statistic } from 'antd';
 import { Link } from 'react-router-dom';
 
-import { useGetCryptosQuery } from '../services/cryptoApi';
+import { useGetExchangesQuery } from '../services/cryptoApi';
 import { Cryptocurrencies, News } from '../components';
 
 const { Title } = Typography;
 
 const Homepage = () => {
-    const { data, isFetching } = useGetCryptosQuery();
+    const { data, isFetching } = useGetExchangesQuery();
     const globalStats = data?.data;
 
     if (isFetching) return 'Loading...';
