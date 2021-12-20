@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useGetExchangesQuery } from '../services/cryptoApi';
 import { Cryptocurrencies, News } from '../components';
 
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
 const Homepage = () => {
     const { data, isFetching } = useGetExchangesQuery();
@@ -26,12 +26,12 @@ const Homepage = () => {
             </Row>
             <div className="home-heading-container">
                 <Title level={2} className="home-title">Top 10 Cryptocurrencies in the world</Title>
-                <Title level={2} className="show-more"><Link to="/cryptocurrencies">Show More</Link></Title>
+                <Text level={2} className="show-more"><Link to="/cryptocurrencies">Show More</Link></Text>
             </div>
             <Cryptocurrencies simplified />
             <div className="home-heading-container">
                 <Title level={2} className="home-title">Lastest Crypto News</Title>
-                <Title level={2} className="show-more"><Link to="/news">Show More</Link></Title>
+                <Text level={2} className="show-more"><Link to="/news">Show More</Link></Text>
             </div>
             <News simplified />
         </>
